@@ -1,14 +1,19 @@
 'use strict'
+
 $(document).ready(function(){
+
+    setTimeout(function() {
+        $('#preloader').fadeOut('slow', function() {
+          $(this).remove();
+        });
+    }, 2000);
+
     $('#navBtn').click(function(){
         $('#navList').toggleClass('active');
-        console.log('Click!');
-
         $('#navList').click(function(){
             $('#navList').toggleClass('active');
         });
     });
-    
     $('#headerSlider').owlCarousel({
         items: 1,
         loop: true,
@@ -35,4 +40,15 @@ $(document).ready(function(){
         lazyLoad: true,
         nav: true
     });
+
+    new WOW().init();
 })
+
+$(document).ready(function(){
+    var modal = $('#modal')
+    var modalForm = $('#modalForm')
+    var modalCross = $('modalCross')
+
+    var searchBtn = $('#searchBtn')
+})
+
