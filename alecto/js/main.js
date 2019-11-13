@@ -5,15 +5,9 @@ $(document).ready(function(){
     setTimeout(function() {
         $('#preloader').fadeOut('slow', function() {
           $(this).remove();
-        });
+        })
     }, 2000);
 
-    $('#navBtn').click(function(){
-        $('#navList').toggleClass('active');
-        $('#navList').click(function(){
-            $('#navList').toggleClass('active');
-        });
-    });
     $('#headerSlider').owlCarousel({
         items: 1,
         loop: true,
@@ -21,6 +15,7 @@ $(document).ready(function(){
         mouseDrag: false,
         touchDrag: true,
         lazyLoad: true,
+        navigation: false,
         responsive:{
             0:{
                 nav: false
@@ -38,17 +33,42 @@ $(document).ready(function(){
         mouseDrag: false,
         touchDrag: true,
         lazyLoad: true,
+        navigation: false,
         nav: true
     });
 
     new WOW().init();
-})
+});
 
 $(document).ready(function(){
-    var modal = $('#modal')
-    var modalForm = $('#modalForm')
-    var modalCross = $('modalCross')
+    let nav = $('#navigation')
+    let navBtn = $('#navBtn')
+    let navList = $('#navigationList')
+    let navListItem = $('.navigation-list-item')
 
-    var searchBtn = $('#searchBtn')
+    navBtn.click(function(e){
+        nav.toggleClass('responsive')
+        navList.toggleClass('responsive')
+    });
+
+    navList.click(function(e){
+        if(navList.hasClass('responsive')){
+            navList.toggleClass('responsive')
+        }
+    })
+});
+
+
+$(document).ready(function(){
+    $(window).on('scroll', function(){
+        if($(window).scrollTop()){
+            $('#navigation').addClass('green');
+        }
+        else
+        {
+            $('#navigation').removeClass('green');
+        }
+    })
 })
 
+//todo Закончить навигацию

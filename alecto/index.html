@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Alecto</title>
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/main.css?=666"/>
   </head>
   <body>
     <div class="preloader" id="preloader">
@@ -15,22 +15,17 @@
         <div class="preloader-item"></div>
       </div>
     </div>
-    <div class="modal" id="modal">
-      <div class="modal-cross" id="modalCross"></div>
-      <div class="modal-form" id="modalForm">
-        <input class="modal-form-input"/>
-      </div>
-    </div>
-    <nav class="navigation">
-      <div class="navigation-wrapper"><span class="navigation-logo">Alecto</span>
-        <ul class="navigation-list" id="navList">
-          <li class="navigation-list-item"><a class="navigation-list-link" href="#home">HOME</a></li>
-          <li class="navigation-list-item"><a class="navigation-list-link" href="#about">ABOUT</a></li>
-          <li class="navigation-list-item"><a class="navigation-list-link" href="#work">WORK</a></li>
-          <li class="navigation-list-item"><a class="navigation-list-link" href="#services">SERVICES</a></li>
-          <li class="navigation-list-item"> <a class="navigation-list-link" href="#pricing">PRICING</a></li>
-          <li class="navigation-list-item navigation-list-item__search" id="searchBtn">
-            <svg class="navigation-list-item-icon">
+    <!--include blocks/_navigation.pug-->
+    <nav class="navigation" id="navigation">
+      <div class="navigation-container"><span class="navigation-logo">Alecto</span>
+        <ul class="navigation-list" id="navigationList">
+          <li class="navigation-list-item"><a class="navigation-list-link" href="#home">Home</a></li>
+          <li class="navigation-list-item"><a class="navigation-list-link" href="#about">About</a></li>
+          <li class="navigation-list-item"><a class="navigation-list-link" href="#work">Work</a></li>
+          <li class="navigation-list-item"><a class="navigation-list-link" href="#services">Services</a></li>
+          <li class="navigation-list-item"><a class="navigation-list-link" href="#pricing">Blog</a></li>
+          <li class="navigation-list-item" id="searchIcon">
+            <svg class="navigation-list-icon">
               <use xlink:href="img/sprite.svg#search"></use>
             </svg>
           </li>
@@ -42,7 +37,7 @@
         </div>
       </div>
     </nav>
-    <header class="header"><a name="home"></a>
+    <header class="header"><a id="home"></a>
       <div class="header-slider" id="headerSlider">
         <div class="header-slider-item">
           <div class="header-slider-item-content">
@@ -76,7 +71,7 @@
         </div>
       </div>
     </header>
-    <section class="about"><a name="about"></a>
+    <section class="about"><a id="about"></a>
       <div class="about-container">
         <h2 class="about-title title">About us</h2>
         <p class="about-text pubText">Nam varius accumsan elementum. Aliquam fermentum eros in suscipit scelerisque.</p>
@@ -120,11 +115,11 @@
         </div><a class="about-button wow fadeIn">Learn more</a>
       </div>
     </section>
-    <section class="photos"><a name="work"></a>
+    <section class="photos"><a id="work"></a>
       <div class="photos-item photos-item__camera">
         <div class="photos-item-container">
-          <div class="photos-item-img wow slideInLeft"><img class="photos-item-img__camera" src="img/camera.png" alt="camera.png"/></div>
-          <div class="photos-item-descr wow fadeIn">
+          <div class="photos-item-img wow slideInLeft" data-wow-offset="150" data-wow-delay="0.1s"><img class="photos-item-img__camera" src="img/camera.png" alt="camera.png"/></div>
+          <div class="photos-item-descr wow fadeIn" data-wow-offset="150" data-wow-delay="0.1s">
             <h3 class="photos-item-title">Lorem ipsum</h3>
             <p class="photos-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum augue sed est porttitor, ac blandit nisl posuere. Pellentesque hendrerit suscipit mi eu lobortis. Curabitur consectetur enim id elementum accumsan. Quisque metus purus, iaculis id tincidunt non, blandit quis sapien. </p><a class="photos-item-button">Learn more</a>
           </div>
@@ -132,8 +127,8 @@
       </div>
       <div class="photos-item photos-item__mac">
         <div class="photos-item-container photos-item-container__mac">
-          <div class="photos-item-img wow slideInRight"><img class="photos-item-img__laptop" src="img/laptop.png" alt="laptop.png"/></div>
-          <div class="photos-item-descr wow fadeIn">
+          <div class="photos-item-img wow slideInRight" data-wow-offset="150" data-wow-delay="0.1s"><img class="photos-item-img__laptop" src="img/laptop.png" alt="laptop.png"/></div>
+          <div class="photos-item-descr wow fadeIn" data-wow-offset="150" data-wow-delay="0.1s">
             <h3 class="photos-item-title">Dolor sit amet</h3>
             <p class="photos-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum augue sed est porttitor, ac blandit nisl posuere. Pellentesque hendrerit suscipit mi eu lobortis. Curabitur consectetur enim id elementum accumsan. Quisque metus purus, iaculis id tincidunt non, blandit quis sapien. </p><a class="photos-item-button">Learn more</a>
           </div>
@@ -143,30 +138,30 @@
     <section class="opinions">
       <div class="opinions-container">
         <div class="opinions-slider" id="opinionSlider">
-          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png"/>
+          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png" alt="avatar.png"/>
             <h3 class="opinions-slider-item-title"><span class="opinions-slider-item-title__span">Alecto </span>lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p class="opinions-slider-item-text">Adam Czajkowski, CEO&amp;Founder at symu.co</p>
           </div>
-          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png"/>
+          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png" alt="avatar.png"/>
             <h3 class="opinions-slider-item-title"><span class="opinions-slider-item-title__span">Alecto </span>lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p class="opinions-slider-item-text">Adam Czajkowski, CEO&amp;Founder at symu.co</p>
           </div>
-          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png"/>
+          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png" alt="avatar.png"/>
             <h3 class="opinions-slider-item-title"><span class="opinions-slider-item-title__span">Alecto </span>lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p class="opinions-slider-item-text">Adam Czajkowski, CEO&amp;Founder at symu.co</p>
           </div>
-          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png"/>
+          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png" alt="avatar.png"/>
             <h3 class="opinions-slider-item-title"><span class="opinions-slider-item-title__span">Alecto </span>lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p class="opinions-slider-item-text">Adam Czajkowski, CEO&amp;Founder at symu.co</p>
           </div>
-          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png"/>
+          <div class="opinions-slider-item"><img class="opinions-slider-item-img" src="img/avatar.png" alt="avatar.png"/>
             <h3 class="opinions-slider-item-title"><span class="opinions-slider-item-title__span">Alecto </span>lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p class="opinions-slider-item-text">Adam Czajkowski, CEO&amp;Founder at symu.co</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="services"><a name="services"></a>
+    <section class="services"><a id="services"></a>
       <div class="services-container">
         <h2 class="services-title title wow fadeIn">Our Services</h2>
         <p class="services-text pubText wow fadeInw">Nam varius accumsan elementum. Aliquam fermentum eros in suscipit scelerisque.</p>
@@ -282,7 +277,7 @@
         </div>
       </div>
     </section>
-    <section class="prising"><a name="pricing"></a>
+    <section class="prising"><a id="pricing"></a>
       <div class="prising-continer">
         <h2 class="prising-title title wow fadeIn">Pricing</h2>
         <p class="prising-text pubText wow fadeIn">Nam varius accumsan elementum. Aliquam fermentum eros in suscipit scelerisque.</p>
@@ -361,6 +356,7 @@
     </section>
     <script src="js/jquery.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/menuspy.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/main.js"></script>
   </body>
